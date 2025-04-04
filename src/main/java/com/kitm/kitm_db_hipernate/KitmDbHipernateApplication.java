@@ -189,7 +189,7 @@ public class KitmDbHipernateApplication {
 						sortByScore(realEstateDao.findBestRealEstates());
 						break;
 					case 4:
-						System.out.println("Pažymime geriausius obijektus kaip VIP");
+						System.out.println("Pažymime geriausius objektus kaip VIP");
 						for (RealEstate realEstate : realEstateDao.findBestRealEstates()){
 							realEstate.setVip(true);
 							realEstateDao.update(realEstate);
