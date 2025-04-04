@@ -99,13 +99,9 @@ public class RealEstate {
 
     @Override
     public String toString() {
-        return "RealEstate{" +
-                "adress='" + adress + '\'' +
-                ", areaSqrM=" + areaSqrM +
-                ", priceEur=" + priceEur +
-                ", score=" + score +
-                ", type='" + type + '\'' +
-                ", vip=" + vip +
-                '}';
+        return String.format(
+                "| %3d | %-25s | %10.2f m² | %10.2f € | Įvertinimas: %2d | %-10s | VIP: %-5s |",
+                id, adress, areaSqrM, priceEur, score, type, vip ? "Taip" : "Ne"
+        );
     }
 }

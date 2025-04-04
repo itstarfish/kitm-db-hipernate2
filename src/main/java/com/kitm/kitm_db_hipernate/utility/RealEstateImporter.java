@@ -22,10 +22,10 @@ public class RealEstateImporter {
                 RealEstate realEstate = parseRealEstate(fields);
                 System.out.println(realEstate);
                 if (realEstate != null) {
-                    //realEstateDao.save(realEstate);
+                    realEstateDao.save(realEstate);
                     System.out.println("Saved realEstate. ID: " + realEstate.getId());
                 } else {
-                    System.out.println("Skipping invalid row: " + line);
+                    System.out.println("Invalid row: " + line);
                 }
             }
 

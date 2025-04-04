@@ -1,0 +1,10 @@
+CREATE TABLE `realestate` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `adresas` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `plotas_kv_m` double DEFAULT NULL,
+  `ivertinimas` int DEFAULT NULL,
+  `tipas` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `vip` tinyint(1) DEFAULT NULL,
+  `kaina_eur` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

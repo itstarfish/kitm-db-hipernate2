@@ -1,0 +1,212 @@
+"C:\Program Files\Java\jdk-23\bin\java.exe" -XX:TieredStopAtLevel=1 -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true "-Dmanagement.endpoints.jmx.exposure.include=*" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.3.4\lib\idea_rt.jar=64720" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\MainPC\Desktop\KITM\kitm-db-hipernate2\target\classes;C:\Users\MainPC\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.4.4\spring-boot-starter-data-jpa-3.4.4.jar;C:\Users\MainPC\.m2\repository\org\springframework\boot\spring-boot-starter\3.4.4\spring-boot-starter-3.4.4.jar;C:\Users\MainPC\.m2\repository\org\springframework\boot\spring-boot\3.4.4\spring-boot-3.4.4.jar;C:\Users\MainPC\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.4.4\spring-boot-autoconfigure-3.4.4.jar;C:\Users\MainPC\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.4.4\spring-boot-starter-logging-3.4.4.jar;C:\Users\MainPC\.m2\repository\ch\qos\logback\logback-classic\1.5.18\logback-classic-1.5.18.jar;C:\Users\MainPC\.m2\repository\ch\qos\logback\logback-core\1.5.18\logback-core-1.5.18.jar;C:\Users\MainPC\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\MainPC\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\MainPC\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\MainPC\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\MainPC\.m2\repository\org\yaml\snakeyaml\2.3\snakeyaml-2.3.jar;C:\Users\MainPC\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.4.4\spring-boot-starter-jdbc-3.4.4.jar;C:\Users\MainPC\.m2\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar;C:\Users\MainPC\.m2\repository\org\springframework\spring-jdbc\6.2.5\spring-jdbc-6.2.5.jar;C:\Users\MainPC\.m2\repository\org\hibernate\orm\hibernate-core\6.6.11.Final\hibernate-core-6.6.11.Final.jar;C:\Users\MainPC\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\MainPC\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\MainPC\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar;C:\Users\MainPC\.m2\repository\org\hibernate\common\hibernate-commons-annotations\7.0.3.Final\hibernate-commons-annotations-7.0.3.Final.jar;C:\Users\MainPC\.m2\repository\io\smallrye\jandex\3.2.0\jandex-3.2.0.jar;C:\Users\MainPC\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;C:\Users\MainPC\.m2\repository\net\bytebuddy\byte-buddy\1.15.11\byte-buddy-1.15.11.jar;C:\Users\MainPC\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\MainPC\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\MainPC\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\MainPC\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\MainPC\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\MainPC\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\MainPC\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\MainPC\.m2\repository\org\springframework\data\spring-data-jpa\3.4.4\spring-data-jpa-3.4.4.jar;C:\Users\MainPC\.m2\repository\org\springframework\data\spring-data-commons\3.4.4\spring-data-commons-3.4.4.jar;C:\Users\MainPC\.m2\repository\org\springframework\spring-orm\6.2.5\spring-orm-6.2.5.jar;C:\Users\MainPC\.m2\repository\org\springframework\spring-context\6.2.5\spring-context-6.2.5.jar;C:\Users\MainPC\.m2\repository\org\springframework\spring-expression\6.2.5\spring-expression-6.2.5.jar;C:\Users\MainPC\.m2\repository\io\micrometer\micrometer-observation\1.14.5\micrometer-observation-1.14.5.jar;C:\Users\MainPC\.m2\repository\io\micrometer\micrometer-commons\1.14.5\micrometer-commons-1.14.5.jar;C:\Users\MainPC\.m2\repository\org\springframework\spring-aop\6.2.5\spring-aop-6.2.5.jar;C:\Users\MainPC\.m2\repository\org\springframework\spring-tx\6.2.5\spring-tx-6.2.5.jar;C:\Users\MainPC\.m2\repository\org\springframework\spring-beans\6.2.5\spring-beans-6.2.5.jar;C:\Users\MainPC\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\MainPC\.m2\repository\org\springframework\spring-aspects\6.2.5\spring-aspects-6.2.5.jar;C:\Users\MainPC\.m2\repository\org\aspectj\aspectjweaver\1.9.23\aspectjweaver-1.9.23.jar;C:\Users\MainPC\.m2\repository\com\mysql\mysql-connector-j\9.1.0\mysql-connector-j-9.1.0.jar;C:\Users\MainPC\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\MainPC\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\MainPC\.m2\repository\org\springframework\spring-core\6.2.5\spring-core-6.2.5.jar;C:\Users\MainPC\.m2\repository\org\springframework\spring-jcl\6.2.5\spring-jcl-6.2.5.jar com.kitm.kitm_db_hipernate.KitmDbHipernateApplication
+===== NT Sistemos Meniu =====
+1. Importuoti NT duomenis iš CSV
+2. Rodyti visus NT objektus
+3. Rodyti geriausius NT objektus (įvertinimas >= 8)
+4. Pažymėti geriausius objektus kaip VIP
+5. Išeiti
+Pasirinkite: 2
+Visi NT objektai:
+RealEstate List in database: 
+| Vilniaus g. 10            |      65.50 m² |  125000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Sodų g. 22                |     140.00 m² |  235000.00 € | Įvertinimas:  7 | namas      | VIP: Ne    |
+| Parko g. 3A               |      80.20 m² |  160000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Nemuno g. 15              |     190.50 m² |  310000.00 € | Įvertinimas: 10 | namas      | VIP: Taip  |
+| Kauno g. 5                |       0.00 m² |   95000.00 € | Įvertinimas:  6 | butas      | VIP: Ne    |
+| J. Basanavičiaus g. 9     |      45.30 m² |       0.00 € | Įvertinimas:  5 | butas      | VIP: Ne    |
+| Dariaus ir Girėno g. 7    |      50.00 m² |   87000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Taip  |
+| Laisvės pr. 25            |      66.60 m² |  134000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Žirmūnų g. 14             |      75.40 m² |  158000.00 € | Įvertinimas:  7 | butas      | VIP: Ne    |
+| Adresas nežinomas         |      52.00 m² |  112000.00 € | Įvertinimas:  6 | butas      | VIP: Ne    |
+| Kęstučio g. 8             |      60.10 m² |       0.00 € | Įvertinimas: 10 | butas      | VIP: Taip  |
+| Kalvarijų g. 100          |      85.00 m² |  170000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Šilo g. 1                 |      70.00 m² |  148000.00 € | Įvertinimas:  8 | sklypas    | VIP: Taip  |
+| Maironio g. 4             |      92.30 m² |  200000.00 € | Įvertinimas:  7 | Nežinomas  | VIP: Ne    |
+| Savanorių pr. 231         |     110.00 m² |  215000.00 € | Įvertinimas: 10 | namas      | VIP: Taip  |
+| Rasos g. 12               |       0.00 m² |  180000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Vytauto g. 33             |      74.20 m² |  155000.00 € | Įvertinimas:  3 | butas      | VIP: Ne    |
+| Pušų g. 9                 |      68.00 m² |  125000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Taip  |
+| Vilniaus g. 10            |      65.50 m² |  125000.00 € | Įvertinimas:  0 | butas      | VIP: Ne    |
+| Kęstučio g. 100           |      60.10 m² |  120000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+
+===== NT Sistemos Meniu =====
+1. Importuoti NT duomenis iš CSV
+2. Rodyti visus NT objektus
+3. Rodyti geriausius NT objektus (įvertinimas >= 8)
+4. Pažymėti geriausius objektus kaip VIP
+5. Išeiti
+Pasirinkite: 1
+Importuojami NT duomenys iš nt_duomenys.csv| Vilniaus g. 10            |      65.50 m² |  125000.00 € | Įvertinimas:  9 | butas      | VIP: Ne    |
+Saved realEstate. ID: 22
+| Sodų g. 22                |     140.00 m² |  235000.00 € | Įvertinimas:  7 | namas      | VIP: Ne    |
+Saved realEstate. ID: 23
+| Parko g. 3A               |      80.20 m² |  160000.00 € | Įvertinimas:  8 | butas      | VIP: Ne    |
+Saved realEstate. ID: 24
+| Nemuno g. 15              |     190.50 m² |  310000.00 € | Įvertinimas: 10 | namas      | VIP: Ne    |
+Saved realEstate. ID: 25
+| Kauno g. 5                |       0.00 m² |   95000.00 € | Įvertinimas:  6 | butas      | VIP: Ne    |
+Saved realEstate. ID: 26
+| J. Basanavičiaus g. 9     |      45.30 m² |       0.00 € | Įvertinimas:  5 | butas      | VIP: Ne    |
+Saved realEstate. ID: 27
+| Dariaus ir Girėno g. 7    |      50.00 m² |   87000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Ne    |
+Saved realEstate. ID: 28
+| Laisvės pr. 25            |      66.60 m² |  134000.00 € | Įvertinimas:  8 | butas      | VIP: Ne    |
+Saved realEstate. ID: 29
+| Žirmūnų g. 14             |      75.40 m² |  158000.00 € | Įvertinimas:  7 | butas      | VIP: Ne    |
+Saved realEstate. ID: 30
+| Adresas nežinomas         |      52.00 m² |  112000.00 € | Įvertinimas:  6 | butas      | VIP: Ne    |
+Saved realEstate. ID: 31
+| Kęstučio g. 8             |      60.10 m² |       0.00 € | Įvertinimas: 10 | butas      | VIP: Ne    |
+Saved realEstate. ID: 32
+| Kalvarijų g. 100          |      85.00 m² |  170000.00 € | Įvertinimas:  9 | butas      | VIP: Ne    |
+Saved realEstate. ID: 33
+| Šilo g. 1                 |      70.00 m² |  148000.00 € | Įvertinimas:  8 | sklypas    | VIP: Ne    |
+Saved realEstate. ID: 34
+| Maironio g. 4             |      92.30 m² |  200000.00 € | Įvertinimas:  7 | Nežinomas  | VIP: Ne    |
+Saved realEstate. ID: 35
+| Savanorių pr. 231         |     110.00 m² |  215000.00 € | Įvertinimas: 10 | namas      | VIP: Ne    |
+Saved realEstate. ID: 36
+| Rasos g. 12               |       0.00 m² |  180000.00 € | Įvertinimas:  8 | butas      | VIP: Ne    |
+Saved realEstate. ID: 37
+| Vytauto g. 33             |      74.20 m² |  155000.00 € | Įvertinimas:  3 | butas      | VIP: Ne    |
+Saved realEstate. ID: 38
+| Pušų g. 9                 |      68.00 m² |  125000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Ne    |
+Saved realEstate. ID: 39
+| Vilniaus g. 10            |      65.50 m² |  125000.00 € | Įvertinimas:  0 | butas      | VIP: Ne    |
+Saved realEstate. ID: 40
+| Kęstučio g. 100           |      60.10 m² |  120000.00 € | Įvertinimas:  9 | butas      | VIP: Ne    |
+Saved realEstate. ID: 41
+
+===== NT Sistemos Meniu =====
+1. Importuoti NT duomenis iš CSV
+2. Rodyti visus NT objektus
+3. Rodyti geriausius NT objektus (įvertinimas >= 8)
+4. Pažymėti geriausius objektus kaip VIP
+5. Išeiti
+Pasirinkite: 2
+Visi NT objektai:
+RealEstate List in database: 
+| Vilniaus g. 10            |      65.50 m² |  125000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Sodų g. 22                |     140.00 m² |  235000.00 € | Įvertinimas:  7 | namas      | VIP: Ne    |
+| Parko g. 3A               |      80.20 m² |  160000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Nemuno g. 15              |     190.50 m² |  310000.00 € | Įvertinimas: 10 | namas      | VIP: Taip  |
+| Kauno g. 5                |       0.00 m² |   95000.00 € | Įvertinimas:  6 | butas      | VIP: Ne    |
+| J. Basanavičiaus g. 9     |      45.30 m² |       0.00 € | Įvertinimas:  5 | butas      | VIP: Ne    |
+| Dariaus ir Girėno g. 7    |      50.00 m² |   87000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Taip  |
+| Laisvės pr. 25            |      66.60 m² |  134000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Žirmūnų g. 14             |      75.40 m² |  158000.00 € | Įvertinimas:  7 | butas      | VIP: Ne    |
+| Adresas nežinomas         |      52.00 m² |  112000.00 € | Įvertinimas:  6 | butas      | VIP: Ne    |
+| Kęstučio g. 8             |      60.10 m² |       0.00 € | Įvertinimas: 10 | butas      | VIP: Taip  |
+| Kalvarijų g. 100          |      85.00 m² |  170000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Šilo g. 1                 |      70.00 m² |  148000.00 € | Įvertinimas:  8 | sklypas    | VIP: Taip  |
+| Maironio g. 4             |      92.30 m² |  200000.00 € | Įvertinimas:  7 | Nežinomas  | VIP: Ne    |
+| Savanorių pr. 231         |     110.00 m² |  215000.00 € | Įvertinimas: 10 | namas      | VIP: Taip  |
+| Rasos g. 12               |       0.00 m² |  180000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Vytauto g. 33             |      74.20 m² |  155000.00 € | Įvertinimas:  3 | butas      | VIP: Ne    |
+| Pušų g. 9                 |      68.00 m² |  125000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Taip  |
+| Vilniaus g. 10            |      65.50 m² |  125000.00 € | Įvertinimas:  0 | butas      | VIP: Ne    |
+| Kęstučio g. 100           |      60.10 m² |  120000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Vilniaus g. 10            |      65.50 m² |  125000.00 € | Įvertinimas:  9 | butas      | VIP: Ne    |
+| Sodų g. 22                |     140.00 m² |  235000.00 € | Įvertinimas:  7 | namas      | VIP: Ne    |
+| Parko g. 3A               |      80.20 m² |  160000.00 € | Įvertinimas:  8 | butas      | VIP: Ne    |
+| Nemuno g. 15              |     190.50 m² |  310000.00 € | Įvertinimas: 10 | namas      | VIP: Ne    |
+| Kauno g. 5                |       0.00 m² |   95000.00 € | Įvertinimas:  6 | butas      | VIP: Ne    |
+| J. Basanavičiaus g. 9     |      45.30 m² |       0.00 € | Įvertinimas:  5 | butas      | VIP: Ne    |
+| Dariaus ir Girėno g. 7    |      50.00 m² |   87000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Ne    |
+| Laisvės pr. 25            |      66.60 m² |  134000.00 € | Įvertinimas:  8 | butas      | VIP: Ne    |
+| Žirmūnų g. 14             |      75.40 m² |  158000.00 € | Įvertinimas:  7 | butas      | VIP: Ne    |
+| Adresas nežinomas         |      52.00 m² |  112000.00 € | Įvertinimas:  6 | butas      | VIP: Ne    |
+| Kęstučio g. 8             |      60.10 m² |       0.00 € | Įvertinimas: 10 | butas      | VIP: Ne    |
+| Kalvarijų g. 100          |      85.00 m² |  170000.00 € | Įvertinimas:  9 | butas      | VIP: Ne    |
+| Šilo g. 1                 |      70.00 m² |  148000.00 € | Įvertinimas:  8 | sklypas    | VIP: Ne    |
+| Maironio g. 4             |      92.30 m² |  200000.00 € | Įvertinimas:  7 | Nežinomas  | VIP: Ne    |
+| Savanorių pr. 231         |     110.00 m² |  215000.00 € | Įvertinimas: 10 | namas      | VIP: Ne    |
+| Rasos g. 12               |       0.00 m² |  180000.00 € | Įvertinimas:  8 | butas      | VIP: Ne    |
+| Vytauto g. 33             |      74.20 m² |  155000.00 € | Įvertinimas:  3 | butas      | VIP: Ne    |
+| Pušų g. 9                 |      68.00 m² |  125000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Ne    |
+| Vilniaus g. 10            |      65.50 m² |  125000.00 € | Įvertinimas:  0 | butas      | VIP: Ne    |
+| Kęstučio g. 100           |      60.10 m² |  120000.00 € | Įvertinimas:  9 | butas      | VIP: Ne    |
+
+===== NT Sistemos Meniu =====
+1. Importuoti NT duomenis iš CSV
+2. Rodyti visus NT objektus
+3. Rodyti geriausius NT objektus (įvertinimas >= 8)
+4. Pažymėti geriausius objektus kaip VIP
+5. Išeiti
+Pasirinkite: 3
+Geriausi NT objektai (įvertinimas >= 8):
+| Nemuno g. 15              |     190.50 m² |  310000.00 € | Įvertinimas: 10 | namas      | VIP: Taip  |
+| Kęstučio g. 8             |      60.10 m² |       0.00 € | Įvertinimas: 10 | butas      | VIP: Taip  |
+| Savanorių pr. 231         |     110.00 m² |  215000.00 € | Įvertinimas: 10 | namas      | VIP: Taip  |
+| Nemuno g. 15              |     190.50 m² |  310000.00 € | Įvertinimas: 10 | namas      | VIP: Ne    |
+| Kęstučio g. 8             |      60.10 m² |       0.00 € | Įvertinimas: 10 | butas      | VIP: Ne    |
+| Savanorių pr. 231         |     110.00 m² |  215000.00 € | Įvertinimas: 10 | namas      | VIP: Ne    |
+| Vilniaus g. 10            |      65.50 m² |  125000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Kalvarijų g. 100          |      85.00 m² |  170000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Kęstučio g. 100           |      60.10 m² |  120000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Vilniaus g. 10            |      65.50 m² |  125000.00 € | Įvertinimas:  9 | butas      | VIP: Ne    |
+| Kalvarijų g. 100          |      85.00 m² |  170000.00 € | Įvertinimas:  9 | butas      | VIP: Ne    |
+| Kęstučio g. 100           |      60.10 m² |  120000.00 € | Įvertinimas:  9 | butas      | VIP: Ne    |
+| Parko g. 3A               |      80.20 m² |  160000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Dariaus ir Girėno g. 7    |      50.00 m² |   87000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Taip  |
+| Laisvės pr. 25            |      66.60 m² |  134000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Šilo g. 1                 |      70.00 m² |  148000.00 € | Įvertinimas:  8 | sklypas    | VIP: Taip  |
+| Rasos g. 12               |       0.00 m² |  180000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Pušų g. 9                 |      68.00 m² |  125000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Taip  |
+| Parko g. 3A               |      80.20 m² |  160000.00 € | Įvertinimas:  8 | butas      | VIP: Ne    |
+| Dariaus ir Girėno g. 7    |      50.00 m² |   87000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Ne    |
+| Laisvės pr. 25            |      66.60 m² |  134000.00 € | Įvertinimas:  8 | butas      | VIP: Ne    |
+| Šilo g. 1                 |      70.00 m² |  148000.00 € | Įvertinimas:  8 | sklypas    | VIP: Ne    |
+| Rasos g. 12               |       0.00 m² |  180000.00 € | Įvertinimas:  8 | butas      | VIP: Ne    |
+| Pušų g. 9                 |      68.00 m² |  125000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Ne    |
+
+===== NT Sistemos Meniu =====
+1. Importuoti NT duomenis iš CSV
+2. Rodyti visus NT objektus
+3. Rodyti geriausius NT objektus (įvertinimas >= 8)
+4. Pažymėti geriausius objektus kaip VIP
+5. Išeiti
+Pasirinkite: 4
+Pažymime geriausius obijektus kaip VIP
+Geriausi objektai pažymėti kaip VIP.
+
+===== NT Sistemos Meniu =====
+1. Importuoti NT duomenis iš CSV
+2. Rodyti visus NT objektus
+3. Rodyti geriausius NT objektus (įvertinimas >= 8)
+4. Pažymėti geriausius objektus kaip VIP
+5. Išeiti
+Pasirinkite: 3
+Geriausi NT objektai (įvertinimas >= 8):
+| Nemuno g. 15              |     190.50 m² |  310000.00 € | Įvertinimas: 10 | namas      | VIP: Taip  |
+| Kęstučio g. 8             |      60.10 m² |       0.00 € | Įvertinimas: 10 | butas      | VIP: Taip  |
+| Savanorių pr. 231         |     110.00 m² |  215000.00 € | Įvertinimas: 10 | namas      | VIP: Taip  |
+| Nemuno g. 15              |     190.50 m² |  310000.00 € | Įvertinimas: 10 | namas      | VIP: Taip  |
+| Kęstučio g. 8             |      60.10 m² |       0.00 € | Įvertinimas: 10 | butas      | VIP: Taip  |
+| Savanorių pr. 231         |     110.00 m² |  215000.00 € | Įvertinimas: 10 | namas      | VIP: Taip  |
+| Vilniaus g. 10            |      65.50 m² |  125000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Kalvarijų g. 100          |      85.00 m² |  170000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Kęstučio g. 100           |      60.10 m² |  120000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Vilniaus g. 10            |      65.50 m² |  125000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Kalvarijų g. 100          |      85.00 m² |  170000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Kęstučio g. 100           |      60.10 m² |  120000.00 € | Įvertinimas:  9 | butas      | VIP: Taip  |
+| Parko g. 3A               |      80.20 m² |  160000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Dariaus ir Girėno g. 7    |      50.00 m² |   87000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Taip  |
+| Laisvės pr. 25            |      66.60 m² |  134000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Šilo g. 1                 |      70.00 m² |  148000.00 € | Įvertinimas:  8 | sklypas    | VIP: Taip  |
+| Rasos g. 12               |       0.00 m² |  180000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Pušų g. 9                 |      68.00 m² |  125000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Taip  |
+| Parko g. 3A               |      80.20 m² |  160000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Dariaus ir Girėno g. 7    |      50.00 m² |   87000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Taip  |
+| Laisvės pr. 25            |      66.60 m² |  134000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Šilo g. 1                 |      70.00 m² |  148000.00 € | Įvertinimas:  8 | sklypas    | VIP: Taip  |
+| Rasos g. 12               |       0.00 m² |  180000.00 € | Įvertinimas:  8 | butas      | VIP: Taip  |
+| Pušų g. 9                 |      68.00 m² |  125000.00 € | Įvertinimas:  8 | kotedžas   | VIP: Taip  |
+
+===== NT Sistemos Meniu =====
+1. Importuoti NT duomenis iš CSV
+2. Rodyti visus NT objektus
+3. Rodyti geriausius NT objektus (įvertinimas >= 8)
+4. Pažymėti geriausius objektus kaip VIP
+5. Išeiti
+Pasirinkite: 
