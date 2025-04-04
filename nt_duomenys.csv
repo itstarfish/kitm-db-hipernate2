@@ -1,0 +1,21 @@
+id,adresas,plotas_kv_m,kaina_eur,ivertinimas,tipas,vip
+1,Vilniaus g. 10,65.5,125000,9,butas,false
+2,Sodų g. 22,140.0,235000,7,namas,false
+3,Parko g. 3A,80.2,160000,8,butas,false
+4,Nemuno g. 15,190.5,310000,10,namas,false
+5,Kauno g. 5,,95000,6,butas,false
+6,J. Basanavičiaus g. 9,45.3,invalid_kaina,5,butas,false
+7,Dariaus ir Girėno g. 7,50.0,87000,8,kotedžas,false
+8,Laisvės pr. 25,66.6,134000,8,butas,false
+9,Žirmūnų g. 14,75.4,158000,7,butas,false
+10,,52.0,112000,6,butas,false
+11,Kęstučio g. 8,60.1,abc,10,butas,false
+12,Kalvarijų g. 100,85.0,170000,9,butas,false
+13,Šilo g. 1,70.0,148000,8,sklypas,false
+14,Maironio g. 4,92.3,200000,7,,false
+15,Savanorių pr. 231,110.0,215000,10,namas,false
+16,Rasos g. 12,NaN,180000,8,butas,false
+17,Vytauto g. 33,74.2,155000,3,butas,false
+18,Pušų g. 9,68.0,125000,8,kotedžas,false
+19,Vilniaus g. 10,65.5,125000,NaN,butas,false
+20,Kęstučio g. 100,60.1,120000,9,butas,false
