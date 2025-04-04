@@ -8,7 +8,9 @@ public interface RealEstateDAO {
     void save (RealEstate realEstate);
 
     RealEstate findByID(Integer id);
+
     List<RealEstate> findAll();
+    List<RealEstate> findByType(String type);
 
     List<RealEstate> findBestRealEstates();
 

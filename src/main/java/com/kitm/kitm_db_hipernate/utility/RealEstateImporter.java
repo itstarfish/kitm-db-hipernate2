@@ -9,60 +9,88 @@ import java.nio.charset.StandardCharsets;
 public class RealEstateImporter {
 
     public void importFromCsv(RealEstateDAO realEstateDao, String csvFile) {
-        String line;
+        String row;
         String csvSplitBy = ",";
+        int errorCount = 0;
+        int goodCount = 0;
+
+        File file = new File(csvFile);
+
+        if (!file.exists()) {
+            System.out.println("Failas nerastas: " + csvFile);
+            return;
+        }
 
         try (BufferedReader br = new BufferedReader(
-                new InputStreamReader(new FileInputStream(csvFile), StandardCharsets.UTF_8))) {
+                new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8))) {
             br.readLine();
 
-            while ((line = br.readLine()) != null) {
-                String[] fields = line.split(csvSplitBy, -1);
+            while ((row = br.readLine()) != null) {
+                String[] fields = row.split(csvSplitBy, -1);
 
                 RealEstate realEstate = parseRealEstate(fields);
-                System.out.println(realEstate);
                 if (realEstate != null) {
                     realEstateDao.save(realEstate);
-                    System.out.println("Saved realEstate. ID: " + realEstate.getId());
+                    goodCount++;
                 } else {
-                    System.out.println("Invalid row: " + line);
+                    errorCount++;
+                    System.out.println("Neteisinga eilutė: " + row);
                 }
             }
-
+            System.out.println("-------------------------------");
+            System.out.println("Neteisingų eilučių importavime: " + errorCount);
+            System.out.println("Teisingų eilučių importavime: " + goodCount);
+            System.out.println("-------------------------------");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-        private RealEstate parseRealEstate(String[] fields) {
+    private RealEstate parseRealEstate(String[] fields) {
         try {
-            String address = fields[1].isEmpty() ? "Adresas nežinomas" : fields[1];
+            if(fields[1].isEmpty()){
+                return null;
+            }
+            String address = fields[1];
+            Double areaSqrM = parseDouble(fields[2], -1.0);
+            if (areaSqrM < 0) {
+                return null;
+            }
+            Double priceEur = parseDouble(fields[3], -1.0);
+            if (priceEur < 0) {
+                return null;
+            }
+            Integer score = parseInt(fields[4], -1);
+            if (score < 0 || score > 10) {
+                return null;
+            }
+            if (fields[5].isEmpty()){
+                return null;
+            }
+            String type = fields[5];
 
-            Double areaSqrM = parseDouble(fields[2], 0.0);
-            Double priceEur = parseDouble(fields[3], 0.0);
-            Integer score = parseInt(fields[4], 0);
-            String type = fields[5].isEmpty() ? "Nežinomas" : fields[5];
             Boolean vip = fields[6].isEmpty() ? false : Boolean.parseBoolean(fields[6]);
 
             return new RealEstate(address, areaSqrM, priceEur, score, type, vip);
+
         } catch (Exception e) {
             return null;
         }
     }
-    private Double parseDouble(String value, Double defaultValue) {
+    private Double parseDouble(String value, Double testValue) {
         try {
             double parsed = Double.parseDouble(value);
-            return Double.isNaN(parsed) ? defaultValue : parsed;
+            return Double.isNaN(parsed) ? testValue : parsed;
         } catch (NumberFormatException e) {
-            return defaultValue;
+            return testValue;
         }
     }
 
-    private Integer parseInt(String value, Integer defaultValue) {
+    private Integer parseInt(String value, Integer testValue) {
         try {
             return Integer.parseInt(value);
         } catch (NumberFormatException e) {
-            return defaultValue;
+            return testValue;
         }
     }
 

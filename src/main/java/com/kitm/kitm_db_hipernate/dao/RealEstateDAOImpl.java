@@ -34,6 +34,16 @@ public class RealEstateDAOImpl implements RealEstateDAO {
     }
 
     @Override
+    public List<RealEstate> findByType(String type) {
+        //Create query
+        TypedQuery<RealEstate> query = entityManager.createQuery("FROM RealEstate WHERE type=:data",RealEstate.class);
+        //set parameter
+        query.setParameter("data", type);
+        //return results
+        return query.getResultList();
+    }
+
+    @Override
     public List<RealEstate> findBestRealEstates() {
         //Create query
         TypedQuery<RealEstate> query = entityManager.createQuery("FROM RealEstate WHERE score >= 8 ORDER BY score DESC",RealEstate.class);

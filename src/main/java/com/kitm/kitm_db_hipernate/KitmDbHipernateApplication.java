@@ -23,22 +23,21 @@ public class KitmDbHipernateApplication {
 		return runner->{
 
 			menu(realEstateDao);
-			//realEstateList(realEstateDAO);
-
-			//findBestRealEstates(realEstateDAO);
 
 		};
 	}
 
 	public void findBestRealEstates(RealEstateDAO realEstateDAO){
-		System.out.println("Getting best realEstates");
+		System.out.println("Gauname geriausius NT objektus (įvertinimas >= 8)");
 		List<RealEstate> realEstates = realEstateDAO.findBestRealEstates();
-		System.out.println("Unsorted list");
+		System.out.println("Nerūšiuotas sąrašas");
 		printList(realEstates);
-		System.out.println("Sorted list by score");
+		System.out.println("Rūšiuotas pagal įvertinimus");
 		sortByScore(realEstates);
-		System.out.println("Sorted list by price");
+		System.out.println("Rūšiuotas pagal kainą");
 		sortByPrice(realEstates);
+		System.out.println("Rūšiuotas pagal plotą");
+		sortByArea(realEstates);
 
 	}
 	public void printList(List<RealEstate> realEstates){
@@ -55,37 +54,51 @@ public class KitmDbHipernateApplication {
 		realEstates.sort(Comparator.comparingDouble(RealEstate::getPriceEur));
 		printList(realEstates);
 	}
+
+	public void sortByArea(List<RealEstate> realEstates) {
+		realEstates.sort(Comparator.comparingDouble(RealEstate::getAreaSqrM).reversed());
+		printList(realEstates);
+	}
+
 	private void deleteAllRealEstates(RealEstateDAO realEstateDAO){
-		System.out.println("Deleting all realEstates");
+		System.out.println("Triname visą nekilnojamajį turtą iš duomenų bazės");
 		int numRowsDeleted = realEstateDAO.deleteAll();
-		System.out.println("Delete rows count: " + numRowsDeleted);
+		System.out.println("Ištrintų įrašų skaičius: " + numRowsDeleted);
 	}
 	private void updateRealEstate(RealEstateDAO realEstateDAO, int id){
-		System.out.println("Getting realEstate with id: " + id);
+		System.out.println("Gauname nekilnojamajį turtą su id: " + id);
 		RealEstate realEstate = realEstateDAO.findByID(id);
 
-		System.out.println("Updating realEstate to VIP...");
+		System.out.println("Atnaujinamas nekilnojamas turtas į VIP...");
 		realEstate.setVip(true);
 
 		realEstateDAO.update(realEstate);
 
-		System.out.println("Updated realEstate: " + realEstate);
+		System.out.println("Atnaujintas nekilnojamas turtas: " + realEstate);
 
 	}
 	private void deleteRealEstate(RealEstateDAO realEstateDAO, int id){
-		System.out.println("Deleting realEstate with id: "+ id);
+		System.out.println("Triname nekilnojamajį turtą su id: "+ id);
 		realEstateDAO.delete(id);
 	}
 
 	private void realEstateList(RealEstateDAO realEstateDAO){
 		List<RealEstate> realEstates = realEstateDAO.findAll();
-		System.out.println("RealEstate List in database: ");
+		System.out.println("Nekilnojamo turto sąrašas duomenų bazėje: ");
+		for (RealEstate realEstate: realEstates){
+			System.out.println(realEstate);
+		}
+	}
+
+	private void findRealEstateByType(RealEstateDAO realEstateDao, String type) {
+		List<RealEstate> realEstates = realEstateDao.findByType(type);
+		System.out.println("Nekilnojamas turtas su tipu : " + type);
 		for (RealEstate realEstate: realEstates){
 			System.out.println(realEstate);
 		}
 	}
 	private void findRealEstateByID(RealEstateDAO realEstateDAO, int id){
-		System.out.println("Retrieve realEstate with id: " + id);
+		System.out.println("Gauname nekilnojamą turtą pagal id: " + id);
 		RealEstate realEstate = realEstateDAO.findByID(id);
 		System.out.println(realEstate);
 	}
@@ -98,14 +111,16 @@ public class KitmDbHipernateApplication {
 		Scanner scanner = new Scanner(System.in);
 
 		int choice = -1;
+		int choice2 = -1;
 
-		while (choice != 5) {
+		while (choice != 6) {
 			System.out.println("===== NT Sistemos Meniu =====");
 			System.out.println("1. Importuoti NT duomenis iš CSV");
 			System.out.println("2. Rodyti visus NT objektus");
 			System.out.println("3. Rodyti geriausius NT objektus (įvertinimas >= 8)");
 			System.out.println("4. Pažymėti geriausius objektus kaip VIP");
-			System.out.println("5. Išeiti");
+			System.out.println("5. Ištrinti visus duomenis");
+			System.out.println("6. Išeiti");
 			System.out.print("Pasirinkite: ");
 
 			if (scanner.hasNextInt()) {
@@ -114,14 +129,60 @@ public class KitmDbHipernateApplication {
 
 				switch (choice) {
 					case 1:
-						System.out.print("Importuojami NT duomenys iš nt_duomenys.csv");
-						//String csvFile = scanner.nextLine();
-						//importRealEstateFromCSV(realEstateDao,csvFile);
-						importRealEstateFromCSV(realEstateDao, "nt_duomenys.csv");
+						String csvFile = "nt_duomenys.csv";
+						System.out.println("Ar norite įkelti duomenis iš nt_duomenys.csv? taip/ne");
+						if (scanner.hasNextLine()) {
+							if(scanner.nextLine().equals("ne")){
+								System.out.println("Įveskite duomenų failo panadinimą su keliu iki jo:");
+								if (scanner.hasNextLine()) {
+									csvFile = scanner.nextLine();
+								}
+							}
+						}
+						System.out.println("Importuojami NT duomenys iš " + csvFile);
+						importRealEstateFromCSV(realEstateDao, csvFile);
 						break;
 					case 2:
 						System.out.println("Visi NT objektai:");
 						realEstateList(realEstateDao);
+
+						System.out.println("===== Rūšiavimas ir paieška =====");
+						System.out.println("1. Rūšiuoti pagal kainą");
+						System.out.println("2. Rūšiuoti pagal įvertinimą");
+						System.out.println("3. Rūšiuoti pagal plotą");
+						System.out.println("4. Paieška pagal tipą");
+						System.out.println("5. Grįžti į pagrindinį meniu");
+						if (scanner.hasNextInt()) {
+							choice2 = scanner.nextInt();
+							scanner.nextLine();
+
+							switch (choice2) {
+								case 1:
+									System.out.print("Rūšiavimas pagal kainą");
+									sortByPrice(realEstateDao.findAll());
+									break;
+								case 2:
+									System.out.println("Rūšiavimas pagal įvertinimą:");
+									sortByScore(realEstateDao.findAll());
+									break;
+								case 3:
+									System.out.println("Rūšiavimas pagal plotą");
+									sortByArea(realEstateDao.findBestRealEstates());
+									break;
+								case 4:
+									System.out.println("Paieška pagal tipą");
+									System.out.println("Kokio tipo nekilnojamojo turto tipo ieškote?");
+									if (scanner.hasNextLine()) {
+										findRealEstateByType(realEstateDao, scanner.nextLine());
+									}
+									break;
+								case 5:
+									System.out.println("Grįžtame į pagrindinį menių");
+									break;
+								default:
+									System.out.println("Neteisingas pasirinkimas.");
+							}
+						}
 						break;
 					case 3:
 						System.out.println("Geriausi NT objektai (įvertinimas >= 8):");
@@ -136,6 +197,10 @@ public class KitmDbHipernateApplication {
 						System.out.println("Geriausi objektai pažymėti kaip VIP.");
 						break;
 					case 5:
+						System.out.println("Ištriname visus duomenis iš db");
+						realEstateDao.deleteAll();
+						break;
+					case 6:
 						System.out.println("Išeiname");
 						break;
 					default:
